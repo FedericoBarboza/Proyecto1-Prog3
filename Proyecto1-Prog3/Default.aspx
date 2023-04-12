@@ -12,7 +12,7 @@
     <br />
     <asp:Button ID="buscar" runat="server" Text="Buscar" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="lista" runat="server" Text="Listar" />
+    <asp:Button ID="lista" runat="server" Text="Listar" OnClick="lista_Click" />
     <br />
     <asp:GridView ID="gridDepto" runat="server">
     </asp:GridView>

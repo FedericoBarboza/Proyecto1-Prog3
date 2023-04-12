@@ -13,5 +13,17 @@ namespace Proyecto1_Prog3
         {
 
         }
+
+        protected void lista_Click(object sender, EventArgs e)
+        {
+            PersistenciaDepartamento persistencia = Global.fabricaPersistencia.ObtenerPersistenciaDepartamento();
+            gridDepto.DataSource = persistencia.lista();
+            gridDepto.DataBind();
+        }
+
+        protected void buscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

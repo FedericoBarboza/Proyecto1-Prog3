@@ -11,6 +11,7 @@ namespace Proyecto1_Prog3
 {
     public class Global : HttpApplication
     {
+        public static FabricaPersistencia fabricaPersistencia = new FabricaPersistenciaSQL();
         void Application_Start(object sender, EventArgs e)
         {
             // Código que se ejecuta al iniciar la aplicación

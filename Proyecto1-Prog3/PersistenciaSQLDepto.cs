@@ -11,7 +11,7 @@ namespace Proyecto1_Prog3
     {
         private SqlConnection crearConexion()
         {
-            SqlConnection conexion = new SqlConnection("Server=localhost; Database=practico1; Integrated Security=SSPI;");
+            SqlConnection conexion = new SqlConnection("Server=localhost; Database=CORRECCIONPractico1; Integrated Security=SSPI;");
             conexion.Open();
             return conexion;
         }
