@@ -11,14 +11,14 @@ namespace Proyecto1_Prog3
     {
         private SqlConnection crearConexion()
         {
-            SqlConnection conexion = new SqlConnection("Server=localhost; Database=CORRECCIONPractico1; Integrated Security=SSPI;");
+            SqlConnection conexion = new SqlConnection("Server=LAPTOP-T7BHNSJA\\SQLEXPRESS; Database=CORRECCIONPractico1; Integrated Security=SSPI;");
             conexion.Open();
             return conexion;
         }
         public Departamento buscar(int id)
         {
             SqlConnection conexion = crearConexion();
-            SqlCommand comando = new SqlCommand("select cod_depto,nombre_depto from departamento where cod_depto=" + id, conexion);
+            SqlCommand comando = new SqlCommand("select Cod_Depto,nombre from DEPARTAMENTO where Cod_Depto=" + id, conexion);
             SqlDataReader reader;
             Departamento depto = null;
 
@@ -28,20 +28,52 @@ namespace Proyecto1_Prog3
             {  //avanzamos al primer registro y comprobamos si hay datos
                 depto = new Departamento();
                 depto.Codigo = id;
-                depto.Nombre = reader.GetString(reader.GetOrdinal("nombre_depto"));
+                depto.Nombre = reader.GetString(reader.GetOrdinal("nombre"));
             }
 
             return depto;
         }
 
-        public void eliminar(int id)
+        public int eliminar(int id)
         {
-            throw new NotImplementedException();
+            SqlConnection conexion = crearConexion();
+            SqlCommand comando = new SqlCommand("delete from DEPARTAMENTO where Cod_Depto=" + id, conexion);
+            int cont = comando.ExecuteNonQuery();
+            return cont;
         }
 
-        public void guardar(Departamento depto)
+        public int guardar(Departamento depto)
         {
-            throw new NotImplementedException();
+            int cont = 0;
+            SqlTransaction transaccion=null;
+
+            try {
+                SqlConnection conexion = crearConexion();
+                SqlCommand comando = new SqlCommand("update DEPARTAMENTO set nombre=@NOM  where Cod_Depto=@ID", conexion);
+                comando.Parameters.AddWithValue("@NOM", depto.Nombre);
+                comando.Parameters.AddWithValue("@ID", depto.Codigo);
+
+                cont = comando.ExecuteNonQuery();
+
+                if (cont == 0)
+                {
+
+                    comando = new SqlCommand("insert into DEPARTAMENTO (Nombre , Cod_depto) values (@NOM, @ID)", conexion);
+                    comando.Parameters.AddWithValue("@NOM", depto.Nombre);
+                    comando.Parameters.AddWithValue("@ID", depto.Codigo);
+                    cont = comando.ExecuteNonQuery();
+                }
+                //confirmar transaccion en la base de datos
+                transaccion.Commit();
+            }
+            catch(Exception ex){
+                if (transaccion != null) 
+                {
+                    transaccion.Rollback();
+                }
+            }
+
+            return cont;
         }
 
         public List<Departamento> lista()

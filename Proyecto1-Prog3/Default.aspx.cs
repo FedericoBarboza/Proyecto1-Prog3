@@ -23,7 +23,33 @@ namespace Proyecto1_Prog3
 
         protected void buscar_Click(object sender, EventArgs e)
         {
+            int Id = Convert.ToInt32(ID.Text);
+            Departamento depto = new Departamento();
 
+            PersistenciaDepartamento persistenciaSQLDepto = Global.fabricaPersistencia.ObtenerPersistenciaDepartamento();
+            depto = persistenciaSQLDepto.buscar(Id);
+            if (depto != null)
+            {
+                Nombre.Text = depto.Nombre;
+            }
+        }
+
+        protected void eliminar_Click(object sender, EventArgs e)
+        {
+            int Id = Convert.ToInt32(ID.Text);
+
+            PersistenciaDepartamento persistencia = Global.fabricaPersistencia.ObtenerPersistenciaDepartamento();
+            persistencia.eliminar(Id);
+        }
+
+        protected void guardar_Click(object sender, EventArgs e)
+        {
+            Departamento depto=new Departamento();
+            depto.Codigo = Convert.ToInt32(ID.Text);
+            depto.Nombre = Convert.ToString(Nombre.Text);
+
+            PersistenciaDepartamento persistencia = Global.fabricaPersistencia.ObtenerPersistenciaDepartamento();
+            persistencia.guardar(depto);
         }
     }
 }

@@ -9,8 +9,8 @@ namespace Proyecto1_Prog3
     public interface PersistenciaDepartamento
     {
         Departamento buscar(int id);
-        void guardar(Departamento depto);
-        void eliminar(int id);
+        int guardar(Departamento depto);
+        int eliminar(int id);
         List<Departamento> lista();
     }
 }

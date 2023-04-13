@@ -60,6 +60,15 @@ namespace Proyecto1_Prog3
         protected global::System.Web.UI.WebControls.Button buscar;
 
         /// <summary>
+        /// Control guardar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button guardar;
+
+        /// <summary>
         /// Control lista.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace Proyecto1_Prog3
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button lista;
+
+        /// <summary>
+        /// Control eliminar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button eliminar;
 
         /// <summary>
         /// Control gridDepto.

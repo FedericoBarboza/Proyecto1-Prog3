@@ -10,9 +10,12 @@
     <asp:Label ID="Label2" runat="server" Text="Nombre:"></asp:Label>
     <asp:TextBox ID="Nombre" runat="server"></asp:TextBox>
     <br />
-    <asp:Button ID="buscar" runat="server" Text="Buscar" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="buscar" runat="server" Text="Buscar" OnClick="buscar_Click" />
+&nbsp;&nbsp;&nbsp;<asp:Button ID="guardar" runat="server" OnClick="guardar_Click" Text="Guardar" />
+    &nbsp;
     <asp:Button ID="lista" runat="server" Text="Listar" OnClick="lista_Click" />
+    &nbsp;&nbsp;
+    <asp:Button ID="eliminar" runat="server" OnClick="eliminar_Click" Text="Eliminar" />
     <br />
     <asp:GridView ID="gridDepto" runat="server">
     </asp:GridView>
