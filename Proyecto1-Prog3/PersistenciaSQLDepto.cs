@@ -18,7 +18,7 @@ namespace Proyecto1_Prog3
         public Departamento buscar(int id)
         {
             SqlConnection conexion = crearConexion();
-            SqlCommand comando = new SqlCommand("select Cod_Depto,nombre from DEPARTAMENTO where Cod_Depto=" + id, conexion);
+            SqlCommand comando = new SqlCommand("select Cod_Depto,nombre from DEPARTAMENTO (nolock) where Cod_Depto=" + id, conexion);
             SqlDataReader reader;
             Departamento depto = null;
 
@@ -81,7 +81,7 @@ namespace Proyecto1_Prog3
             List<Departamento> lista = new List<Departamento>();
             Departamento departamento = null;
             SqlConnection conexion = crearConexion();
-            SqlCommand sentencia = new SqlCommand("select * from DEPARTAMENTO", crearConexion());
+            SqlCommand sentencia = new SqlCommand("select * from DEPARTAMENTO (nolock)", crearConexion());
             SqlDataReader reader = sentencia.ExecuteReader();
 
             while (reader.Read())

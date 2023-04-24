@@ -210,6 +210,8 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Departamento.cs" />
+    <Compile Include="Empleado.cs" />
+    <Compile Include="Empresa.cs" />
     <Compile Include="FabricaPersistencia.cs" />
     <Compile Include="FabricaPersistenciaSQL.cs" />
     <Compile Include="Global.asax.cs">
@@ -239,6 +241,7 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="VisitanteEmpleado.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
