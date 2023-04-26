@@ -9,5 +9,6 @@ namespace Proyecto1_Prog3
     public interface FabricaPersistencia
     {
         PersistenciaDepartamento ObtenerPersistenciaDepartamento();
+        PersistenciaEmpleado ObtenerPersistenciaEmpleado();
     }
 }

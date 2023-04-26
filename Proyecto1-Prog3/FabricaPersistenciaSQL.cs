@@ -11,5 +11,9 @@ namespace Proyecto1_Prog3
         {
             return new PersistenciaSQLDepto();
         }
+        public PersistenciaEmpleado ObtenerPersistenciaEmpleado()
+        {
+            return new PersistenciaSQLEmpleado();
+        }
     }
 }

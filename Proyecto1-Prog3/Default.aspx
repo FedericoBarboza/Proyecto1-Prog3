@@ -21,4 +21,12 @@
     </asp:GridView>
 
 
+    <br />
+    <asp:TextBox ID="txtDepto" runat="server"></asp:TextBox>
+    <br />
+    <br />
+    <asp:Button ID="Emp" runat="server" OnClick="Emp_Click" Text="Empleado" />
+    <asp:Label ID="Label3" runat="server"></asp:Label>
+
+
 </asp:Content>

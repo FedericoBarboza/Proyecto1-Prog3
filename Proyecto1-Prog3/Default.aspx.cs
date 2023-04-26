@@ -51,5 +51,19 @@ namespace Proyecto1_Prog3
             PersistenciaDepartamento persistencia = Global.fabricaPersistencia.ObtenerPersistenciaDepartamento();
             persistencia.guardar(depto);
         }
+
+        protected void Emp_Click(object sender, EventArgs e)
+        {
+            Empresa emp = Empresa.getInstancia();
+
+            ContadorPorDepto cont = new ContadorPorDepto(Convert.ToInt32(txtDepto.Text));
+
+            emp.procesarEmpleados(cont);
+
+
+            int result = cont.resultado;
+
+            Label3.Text = result.ToString();
+        }
     }
 }
