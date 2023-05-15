@@ -5,6 +5,10 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyecto1-Prog3", "Proyecto1-Prog3\Proyecto1-Prog3.csproj", "{72C6BAD9-1E2B-4719-A437-0F16B6D6DA0C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prueba Estados", "Prueba Estados\Prueba Estados.csproj", "{1DA03C42-3000-4410-AA92-3C9EC5FF7FAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bibilioteca", "Bibilioteca\Bibilioteca.csproj", "{000BBD84-2AA0-47C7-9EA5-2EF27599C5B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{72C6BAD9-1E2B-4719-A437-0F16B6D6DA0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72C6BAD9-1E2B-4719-A437-0F16B6D6DA0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72C6BAD9-1E2B-4719-A437-0F16B6D6DA0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DA03C42-3000-4410-AA92-3C9EC5FF7FAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DA03C42-3000-4410-AA92-3C9EC5FF7FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DA03C42-3000-4410-AA92-3C9EC5FF7FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DA03C42-3000-4410-AA92-3C9EC5FF7FAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{000BBD84-2AA0-47C7-9EA5-2EF27599C5B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{000BBD84-2AA0-47C7-9EA5-2EF27599C5B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{000BBD84-2AA0-47C7-9EA5-2EF27599C5B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{000BBD84-2AA0-47C7-9EA5-2EF27599C5B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

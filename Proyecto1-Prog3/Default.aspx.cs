@@ -16,7 +16,7 @@ namespace Proyecto1_Prog3
 
         protected void lista_Click(object sender, EventArgs e)
         {
-            PersistenciaDepartamento persistencia = Global.fabricaPersistencia.ObtenerPersistenciaDepartamento();
+            PersistenciaDepartamento persistencia = Sistema.fabricaPersistencia.ObtenerPersistenciaDepartamento();
             gridDepto.DataSource = persistencia.lista();
             gridDepto.DataBind();
         }
@@ -26,7 +26,7 @@ namespace Proyecto1_Prog3
             int Id = Convert.ToInt32(ID.Text);
             Departamento depto = new Departamento();
 
-            PersistenciaDepartamento persistenciaSQLDepto = Global.fabricaPersistencia.ObtenerPersistenciaDepartamento();
+            PersistenciaDepartamento persistenciaSQLDepto = Sistema.fabricaPersistencia.ObtenerPersistenciaDepartamento();
             depto = persistenciaSQLDepto.buscar(Id);
             if (depto != null)
             {
@@ -38,7 +38,7 @@ namespace Proyecto1_Prog3
         {
             int Id = Convert.ToInt32(ID.Text);
 
-            PersistenciaDepartamento persistencia = Global.fabricaPersistencia.ObtenerPersistenciaDepartamento();
+            PersistenciaDepartamento persistencia = Sistema.fabricaPersistencia.ObtenerPersistenciaDepartamento();
             persistencia.eliminar(Id);
         }
 
@@ -48,7 +48,7 @@ namespace Proyecto1_Prog3
             depto.Codigo = Convert.ToInt32(ID.Text);
             depto.Nombre = Convert.ToString(Nombre.Text);
 
-            PersistenciaDepartamento persistencia = Global.fabricaPersistencia.ObtenerPersistenciaDepartamento();
+            PersistenciaDepartamento persistencia = Sistema.fabricaPersistencia.ObtenerPersistenciaDepartamento();
             persistencia.guardar(depto);
         }
 
@@ -64,6 +64,27 @@ namespace Proyecto1_Prog3
             int result = cont.resultado;
 
             Label3.Text = result.ToString();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            PersistenciaEmpleado persistencia = Sistema.fabricaPersistencia.ObtenerPersistenciaEmpleado();
+            empGrid.DataSource = persistencia.lista();
+            empGrid.DataBind();
+        }
+
+        protected void deptoCap_Click(object sender, EventArgs e)
+        {
+            PersistenciaDepartamento persistencia = Sistema.fabricaPersistencia.ObtenerPersistenciaDepartamento();
+            IteradorDepto it = new IteradorDepto();
+
+            while (it.hayMas())
+            {
+                Departamento d = it.siguiente();
+                //procesar d
+                d.Nombre = d.Nombre.ToUpper();
+                persistencia.guardar(d);
+            }
         }
     }
 }

@@ -16,6 +16,8 @@
     <asp:Button ID="lista" runat="server" Text="Listar" OnClick="lista_Click" />
     &nbsp;&nbsp;
     <asp:Button ID="eliminar" runat="server" OnClick="eliminar_Click" Text="Eliminar" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="deptoCap" runat="server" OnClick="deptoCap_Click" Text="CapDepartamento" />
     <br />
     <asp:GridView ID="gridDepto" runat="server">
     </asp:GridView>
@@ -27,6 +29,12 @@
     <br />
     <asp:Button ID="Emp" runat="server" OnClick="Emp_Click" Text="Empleado" />
     <asp:Label ID="Label3" runat="server"></asp:Label>
+
+
+    <asp:GridView ID="empGrid" runat="server">
+    </asp:GridView>
+    <br />
+    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Listar" />
 
 
 </asp:Content>

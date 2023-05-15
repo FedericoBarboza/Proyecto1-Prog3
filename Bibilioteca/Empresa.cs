@@ -23,7 +23,7 @@ namespace Proyecto1_Prog3
 
         public void renovar()
         {
-            empleados = Global.fabricaPersistencia.ObtenerPersistenciaEmpleado().lista();
+            empleados = Sistema.fabricaPersistencia.ObtenerPersistenciaEmpleado().lista();
         }
 
         public void procesarEmpleados(VisitanteEmpleado vis)
